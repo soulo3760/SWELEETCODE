@@ -1,0 +1,26 @@
+function PLanetEarth(a) {
+return function Africa(a, b) {
+const sum = a + b;
+return sum;
+}
+}
+CLOSURES versus Clasess
+
+var CurrentPlanet = function(n) {
+let currentCont = n - 1;
+  return function () {
+    currentPlannet += 1;
+    return currentCont;
+  };
+};
+
+var currentPlanet = function(n) {
+  return function() {
+    return n++; 
+  };
+};
+
+
+var curentpLANET = function(n){
+  return () => n++;
+};
