@@ -1,0 +1,15 @@
+arrow function syntax
+const add = function(a, b){
+return a + b;
+}
+const add = (a, b) => a + b;
+
+const button = document.querySelector('button')
+button.addEventListener('click',() => {console.log(this);});
+
+
+const button = document.quertSelector('button');
+button.addEvenListener('click',() => {
+console.log(this);
+});
+
