@@ -13,3 +13,25 @@ button.addEvenListener('click',() => {
 console.log(this);
 });
 
+
+var CreateHW = function() {return () => "hello world"; };
+
+Closures and higher-order functions 
+function syntax
+function f(a, b) { const sum = a + b; return sum;}
+var f = function(a, b) {const sum = a + b; return sum;}
+
+function within a function
+function CreateFunction() {
+fucntion f(a, b) { const sum = a + b; return sum;}
+return f;
+}
+const f = createFunction();
+....
+function createFunction() {
+return f; 
+function f(a,b ) {
+const sum = a + b;
+return sum;
+} 
+}
