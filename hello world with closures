@@ -1,0 +1,43 @@
+function outer(){
+const name = "Bob"
+function inner() {
+console.log('Hello World!, ${name}');
+}
+return inner;
+}
+const greeting = outer()
+greeting(); 
+in programming a closure is a combination of a function and its lexical environment. Lexical environment consists of 
+any variables that were in scope at the time the closure was created. 
+to understand closures, its important to first understand lexical scoping. in javascript variables declared within a function are only accessible within that function.
+and any nested functions within it. However, a nested function can remember the variables from the outer function even after
+the outer functions has returned. this is because the inner functions has access to the variables in the outer functions lexical scope. 
+
+function outer() {
+const name = "bob";
+function inner () {
+console.log('hello, ${name}!');
+}
+return inner;
+}
+const greetings = outer();
+hello bob
+
+ANOTHER EXAMPLE
+function counter() {
+let count = 0;
+return function(){
+count++;
+console.log(count);
+}
+}
+const increment = counter();
+
+solution
+functionHELLOWORLD() {
+const greetings = "Hello world";
+return function(){
+return greetings:
+};
+}
+
