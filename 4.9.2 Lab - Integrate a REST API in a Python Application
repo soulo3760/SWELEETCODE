@@ -21,9 +21,14 @@ orig = "Washington, D.C."
 dest = "Baltimore, M.D"
 key = "oqW9ssG0ry"
 
-url = main_api + urllib.parse.urlencode({"key":key, "from":orig, "to":dest})
-print ("URL", (url))
-json_data = requests.get(url).json()
-json_status = json_data["info"]["statuscode"]
-if json_status == 0:
-    print (print("API Status:" + str(json_status)"))
+while True:
+    orig = input ("Source City")   ## accepts user input instead of static data
+    dest = input ("Destination City")
+    url = main_api + urllib.parse.urlencode({"key":key, "from":orig, "to":dest})
+    print ("URL", (url))
+    json_data = requests.get(url).json()
+    json_status = json_data["info"]["statuscode"]
+    if json_status == 0:
+        print (print("API Status:" + str(json_status) +" = A successful route call.\n"));
+    
+
