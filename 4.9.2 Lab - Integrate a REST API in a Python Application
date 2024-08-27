@@ -17,13 +17,14 @@ import urllib.parse
 import requests
 
 main_api = "https://www.mapquestapi.com/directions/v2/route" 
-orig = "Washington, D.C."
-dest = "Baltimore, M.D"
+# // orig = "Washington, D.C."
+# // dest = "Baltimore, M.D"
 key = "oqW9ssG0ry"
 
 while True:
-    orig = input ("Source City")   ## accepts user input instead of static data
-    dest = input ("Destination City")
+    orig = input ("Source City :")   ## accepts user input instead of static data
+    dest = input ("Destination City :")
+
     url = main_api + urllib.parse.urlencode({"key":key, "from":orig, "to":dest})
     print ("URL", (url))
     json_data = requests.get(url).json()
