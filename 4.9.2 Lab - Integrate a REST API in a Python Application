@@ -24,6 +24,10 @@ key = "oqW9ssG0ry"
 while True:
     orig = input ("Source City :")   ## accepts user input instead of static data
     dest = input ("Destination City :")
+//### we can introduce break using q or quit to stop the code from running as follows
+dest = input ("Destination City :")
+    if dest == "quit" or dest == "q":
+        break
 
     url = main_api + urllib.parse.urlencode({"key":key, "from":orig, "to":dest})
     print ("URL", (url))
@@ -32,4 +36,36 @@ while True:
     if json_status == 0:
         print (print("API Status:" + str(json_status) +" = A successful route call.\n"));
     
+####################
+ADDING MORE FEATURES TO THE RESPONSE 
+#############################
+we are currently getting distance and fuel used to reach a distance
+from the data in json format
+###################################################################
+#####################
+we will work with the print function 
+        print("################################################")
+        print (print("API Status:" + str(json_status) +" = A successful route call.\n"));
+        print("ApI status: " + str(json_status) + " = A successful Trip)
+        print("Directions from: " (orig) + " to " (dest))
+        print("Trips Duration: "+ str(json_data["route"]["formattedTime"]))
+        print("Miles: " + str(json_data["route"]["distance"]))
+        print("Kilometres: " + str(json_data["route"]["distance"] * 1.6))
+        print("Fuel Used (Gal): " + str(json_data["route"]["fuelUsed"]))
+        print("Fuel Used (litres): " + str(json_data["route"]["fuelUsed"] * 3.7))
+
+        print("#################################################")
+
+## to reduce number of decimal places shown we can reduce it to 2 digits :2f  ~~ 2 floats or 3 floats 3f
+        print("Kilometres: " + str(json_data["route"]["distance"] * 1.6))
+this will be 
+        print("Kilometres: " + str("{:2f}".format((json_data["route"]["distance"] * 1.6)))
+or
+        print("Kilometres: " + str("{:3f}".format((json_data["route"]["distance"] * 1.6)))
+        print("Fuel Used (litres): " + str({":3f"}.format(json_data["route"]["fuelUsed"] * 3.7)))
+
+
+
+
+
 
